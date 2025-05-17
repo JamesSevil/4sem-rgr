@@ -1,8 +1,10 @@
 import express from "express";
 import Users from "../mongo/users.js";
+import Files from "../mongo/files.js";
 import bcrypt from "bcrypt";
 import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
+import verifytoken from "./verifytoken.js";
 
 dotenv.config();
 
@@ -47,6 +49,45 @@ router.post("/login", async (req, res) => {
         const accessToken = jwt.sign(payload, ACCESS_TOKEN_SECRET, {expiresIn: ACCESS_TOKEN_EXPIRES_IN});
         const refreshToken = jwt.sign(payload, REFRESH_TOKEN_SECRET, {expiresIn: REFRESH_TOKEN_EXPIRES_IN});
         res.status(200).json({success: true, message: "Упешная авторизация!", accessToken, refreshToken});
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({success: false, message: "Ошибка сервера!"});
+    }
+});
+
+router.put('/', verifytoken, async (req, res) => {
+    const {login, oldPassword, newPassword} = req.body;
+    try {
+        const user = await Users.findOne({login});
+        if (!user) {
+            return res.status(404).json({success: false, message: "Пользователь не найден в базе данных!"});
+        }
+        const checkPassword = await bcrypt.compare(oldPassword, user.password);
+        if (!checkPassword) {
+            return res.status(403).json({success: false, message: "Старый пароль неверный!"});
+        }
+
+        const hashedNewPassword = await bcrypt.hash(newPassword, 10);
+        user.password = hashedNewPassword;
+        await user.save();
+        res.status(200).json({success: true, message: "Пароль успешно обновлён!"});
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({success: false, message: "Ошибка сервера!"});
+    }
+});
+
+router.delete("/", verifytoken, async (req, res) => {
+    const {login} = req.body;
+    try {
+        const user = await Users.findOne({login});
+        if (!user) {
+            return res.status(404).json({success: false, message: "Пользователь не найден в базе данных!"});
+        }
+        
+        await Files.deleteMany({owner: user._id});
+        await Users.deleteOne({_id: user._id});
+        res.status(200).json({success: true, message: "Учетная запись успешно удалена!"});
     } catch (error) {
         console.error(error);
         res.status(500).json({success: false, message: "Ошибка сервера!"});
