@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api";
+import "../styles/upload.css"
 
 const Upload = () => {
     const [file, setFile] = useState(null);
@@ -46,11 +47,11 @@ const Upload = () => {
                         onChange={(e) => setFile(e.target.files[0])}
                         required
                     />
-                    <button type="submit">Загрузить</button>
+                    <button className="upload-button" type="submit">Загрузить</button>
                 </div>
             </form>
 
-            <p><button onClick={() => {navigate('/')}}>Назад</button></p>
+            <p><button className="back-button" onClick={() => {navigate('/')}}>Назад</button></p>
         </div>
     );
 };

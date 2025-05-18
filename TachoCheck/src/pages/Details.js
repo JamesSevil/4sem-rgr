@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import api from "../api";
+import "../styles/details.css";
 
 const Details = () => {
     const { fileId } = useParams();

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import api from "../api"
+import "../styles/home.css";
 
 const Home = () => {
     const [username, setUsername] = useState('');
@@ -160,14 +161,13 @@ const Home = () => {
                         required
                     />
                 </div>
-                <button onClick={handleChangePassword}>Сменить</button>
+                <button className="change_exit-button" onClick={handleChangePassword}>Сменить</button>
             </div>
             
-            <p><button onClick={handleLogout}>Выйти из системы</button></p>
-
+            <p><button className="change_exit-button" onClick={handleLogout}>Выйти из системы</button></p>
             <p><button className="del-button" onClick={handleDeleteUser}>Удалить учетную запись</button></p>
 
-            <hr />
+            <hr/>
             <b>История загрузок</b>
             <div className="filelist">
                 {files.length === 0 ? (<p>Файлы не найдены</p>) : (

@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.upload {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.upload h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.inputfile {
+    margin-bottom: 20px;
+}
+
+.inputfile input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    background-color: #fff;
+}
+
+.inputfile input[type="file"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.upload-button {
+    padding: 10px 50px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 3px;
+}
+
+.upload-button:hover {
+    background-color: #0056b3;
+}
+
+
+.upload p {
+    text-align: center;
+    margin-top: 0px;
+}
+
+.back-button {
+    padding: 10px 50px;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1px;
+}
+
+.back-button:hover {
+    background-color: #c82333;
+}

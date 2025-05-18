@@ -1,0 +1,80 @@
+/* Глобальный сброс для точного контроля */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Контейнер формы */
+.register {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Заголовок */
+.register h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Обертка для инпутов */
+.input {
+    margin-bottom: 20px;
+}
+
+/* Инпуты */
+.input input {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    background-color: #fff;
+}
+
+/* При фокусе */
+.input input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Кнопка */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Текст и ссылка под формой */
+.register p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.register a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}

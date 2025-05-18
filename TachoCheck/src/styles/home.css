@@ -1,0 +1,163 @@
+.home {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.home h2 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.home a {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.home a:hover {
+    text-decoration: underline;
+}
+
+.changepassword {
+    margin: 0 auto 40px;
+    padding: 25px;
+    max-width: 450px;
+    background-color: #fff;
+    border: 1px solid #e0e8f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.05);
+    text-align: center;
+}
+
+.changepassword b {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.changepassword .input {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.changepassword .input input {
+    width: 100%;
+    max-width: 350px;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.changepassword .input input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.change_exit-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 0px;
+}
+
+.change_exit-button:hover {
+    background-color: #0056b3;
+}
+
+.del-button {
+    padding: 10px 20px;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1px;
+}
+
+.del-button:hover {
+    background-color: #c82333;
+}
+
+.home hr {
+    margin-top: 5px; 
+    margin-bottom: 20px;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+.home b {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.filelist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filelist .files {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 500px;
+    min-height: 40px;
+}
+
+.filelist .files a {
+    color: #007BFF;
+    text-decoration: none;
+    flex-grow: 1;
+    text-align: left;
+    display: flex;          
+    align-items: center;    
+    height: 100%;           
+    padding: 0;             
+    margin: 0;
+}
+
+.filelist .files a:hover {
+    text-decoration: underline;
+}
+
+.filelist .files button {
+    padding: 10px 20px;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1px;
+}
+
+.filelist .files button:hover {
+    background-color: #c82333;
+}
